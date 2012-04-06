@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name         蘑菇街 美丽说 爱逛街 geek助手 made by @淘宝决尘
-// @version		 0.0.1
+// @name         蘑菇街 美丽说 爱逛街 geek助手 by Jinpu Hu
+// @version		 0.0.2
 // @author       hujinpu@gmail.com
 // @namespace    http://hujinpu.com
 // @description  在你逛蘑菇街、美丽说、爱逛街时，对于分享的商品，直接跳转到taobao.com的商品详情页
@@ -38,7 +38,7 @@ function main() {
                 wl.href = t.attr('href');
             break;
         case "love.taobao.com":
-            t = $('div.special > a');
+            t = $('p.price-buy > a');
             if (t.length)
                 wl.href = t.attr('href');
             break;
@@ -46,5 +46,3 @@ function main() {
 }
 
 addJQuery(main);
-
-
