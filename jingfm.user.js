@@ -8,23 +8,6 @@
 // @include      *://*.jing.fm/*
 // ==/UserScript==
 
-// function _hjp_setCSS(css) {
-//   try {
-//     document.getElementsByTagName("head")[0].appendChild(css);
-//   } catch (e) {
-//     setTimeout(function(){_hjp_setCSS(css)}, 100);
-//   }
-// }
-//  
-// var _hjp_css = document.createElement("link");
-// _hjp_css.setAttribute("href", "https://github.com/hujinpu/userscrips/raw/master/jingfm.min.css");
-// _hjp_css.setAttribute("rel", "stylesheet");
-// _hjp_css.setAttribute("type", "text/css");
-//  
-// _hjp_setCSS(_hjp_css);
-// _hjp_css = null;
-
-
 function _hjp_appendStyle(styles) {
   var css = document.createElement('style');
   css.type = 'text/css';
