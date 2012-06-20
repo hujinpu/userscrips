@@ -8,7 +8,34 @@
 // @include      *://*.jing.fm/*
 // ==/UserScript==
 
+// function _hjp_setCSS(css) {
+//   try {
+//     document.getElementsByTagName("head")[0].appendChild(css);
+//   } catch (e) {
+//     setTimeout(function(){_hjp_setCSS(css)}, 100);
+//   }
+// }
+//  
+// var _hjp_css = document.createElement("link");
+// _hjp_css.setAttribute("href", "https://github.com/hujinpu/userscrips/raw/master/jingfm.min.css");
+// _hjp_css.setAttribute("rel", "stylesheet");
+// _hjp_css.setAttribute("type", "text/css");
+//  
+// _hjp_setCSS(_hjp_css);
+// _hjp_css = null;
 
-$(function() {
-  $('head').append('<link rel="stylesheet" href="https://github.com/hujinpu/userscrips/raw/master/jingfm.min.css" type="text/css" />');
-});
+
+function _hjp_appendStyle(styles) {
+  var css = document.createElement('style');
+  css.type = 'text/css';
+
+  if (css.styleSheet) css.styleSheet.cssText = styles;
+  else css.appendChild(document.createTextNode(styles));
+
+  document.getElementsByTagName("head")[0].appendChild(css);
+}
+
+var _hjp_styles = ".sans,input,textarea,body { font-family: 'Helvetica Neue', 'Hiragino Sans GB', Helvetica, Arial, sans-serif;}";
+_hjp_styles += ' .prgrsCtn .prgrs {height: 10px; color: red; } ';
+
+window.onload = _hjp_appendStyle(_hjp_styles);
